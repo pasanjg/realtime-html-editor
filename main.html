@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Real Time IDE</title>
+    <script type="text/javascript">
+
+      function refresh(){
+        var textContent = document.getElementById('editor-textarea').value;
+        document.getElementById('viewer').srcdoc = textContent;
+
+      }
+
+      window.onbeforeunload = function ()
+      {
+        return "";
+      };
+
+    </script>
+
+    <style>
+
+      html, body {
+        height: 100%;
+      }
+
+      *{
+        padding: 0;
+        margin: 0;
+        height: 100%;
+
+      }
+
+      .main{
+        background: #bdc3c7;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+      }
+
+      #editor-textarea{
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      #viewer{
+        background: white;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        border: 2px solid #3498db;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <textarea id="editor-textarea" placeholder="Code here..." onkeyup="refresh()"></textarea>
+      <iframe id="viewer" width="" height=""></iframe>
+      <!-- <input type="button" name="" value="Run" onclick="refresh()"> -->
+    </div>
+  </body>
+</html>
