@@ -9,6 +9,22 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #686868;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999797;
+}
+
 html,
 body {
   margin: 0;
@@ -48,7 +64,7 @@ a {
   font-size: 16px;
   font-weight: bold;
   height: 35px;
-  background-color: #1b1b1b;
+  background-color: #202020;
 }
 
 .top-bar .left {
@@ -68,7 +84,7 @@ a {
 
 .top-bar .left .icon {
   margin-left: 20px;
-  color: #818181;
+  color: #999797;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -137,7 +153,7 @@ a {
   justify-content: space-between;
   font-size: 12px;
   height: 20px;
-  background-color: #007acc;
+  background-color: #006cbe;
 }
 
 .bottom-bar .tags {
@@ -182,7 +198,7 @@ a {
   font-family: "Consolas";
   color: white;
   resize: horizontal;
-  background-color: #2b2b2b;
+  background-color: #2e2e2e;
 }
 
 .main-content .viewer {

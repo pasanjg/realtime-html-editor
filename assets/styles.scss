@@ -3,9 +3,36 @@
   src: url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap") format("truetype");
 }
 
+$default-black-dark: #202020;
+$default-black: #2e2e2e;
+$default-black-light: #686868;
+$default-blue: #006cbe;
+$default-light-green: #40c463;
+$default-dark-green: #30a14e;
+$default-gray: #999797;
+$default-light: #edf5fc;
+$white: #ffffff;
+
 * {
   margin: 0;
   box-sizing: border-box;
+}
+
+// scrollbar styles
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $default-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $default-black-light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $default-gray;
 }
 
 html,
@@ -38,7 +65,7 @@ a {
   font-size: 16px;
   font-weight: bold;
   height: 35px;
-  background-color: #1b1b1b;
+  background-color: $default-black-dark;
 
   .left {
     display: flex;
@@ -52,7 +79,7 @@ a {
 
     .icon {
       margin-left: 20px;
-      color: #818181;
+      color: $default-gray;
       cursor: pointer;
       transition: all 0.2s;
 
@@ -113,7 +140,7 @@ a {
   justify-content: space-between;
   font-size: 12px;
   height: 20px;
-  background-color: #007acc;
+  background-color: $default-blue;
 
   .tags {
     display: flex;
@@ -151,7 +178,7 @@ a {
     font-family: "Consolas";
     color: white;
     resize: horizontal;
-    background-color: #2b2b2b;
+    background-color: $default-black;
   }
 
   .viewer {
