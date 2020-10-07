@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Real Time IDE</title>
-    <script type="text/javascript">
 
-      function refresh(){
-        var textContent = document.getElementById('editor-textarea').value;
-        document.getElementById('viewer').srcdoc = textContent;
+<head>
+  <meta charset="utf-8">
+  <title>Real Time HTML IDE</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/script.js"></script>
+  <script src="https://kit.fontawesome.com/64e4326dc2.js" crossorigin="anonymous"></script>
+</head>
 
-      }
-
-      window.onbeforeunload = function ()
-      {
-        return "";
-      };
-
-    </script>
-
-    <style>
-
-      html, body {
-        height: 100%;
-      }
-
-      *{
-        padding: 0;
-        margin: 0;
-        height: 100%;
-
-      }
-
-      .main{
-        background: #003c63;
-        width: 100%;
-        height: 100%;
-        display: inline-flex;
-      }
-
-      #editor-textarea{
-        width: 100%;
-        height: 100%;
-        margin: 10px;
-        padding: 5px;
-      }
-
-      #viewer{
-        background: white;
-        width: 100%;
-        height: 100%;
-        margin: 10px;
-        border: 2px solid #3498db;
-      }
-
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <textarea id="editor-textarea" placeholder="Code here..." onkeyup="refresh()"></textarea>
-      <iframe id="viewer" width="" height=""></iframe>
-      <!-- <input type="button" name="" value="Run" onclick="refresh()"> -->
+<body>
+  <div class="bar top-bar">
+    <div class="left">
+      <img src="https://avatars1.githubusercontent.com/u/44201430?s=460&u=863f9cd29647b3a4a1d759dab576749598192e73&v=4"
+        height="20" alt="pasanjg">
+      <span>HTML Editor</span>
+      <div class="tooltip icon sync" onclick="refresh()">
+        <i class="fa fa-sync-alt"></i>
+        <span class="tooltiptext">Sync</span>
+      </div>
+      <div class="tooltip icon clear" onclick="erase()">
+        <i class="fa fa-backspace"></i>
+        <span class="tooltiptext">Clear</span>
+      </div>
     </div>
-  </body>
+    <div class="right">
+      <span>
+        <a href="https://github.com/pasanjg/realtime-html-editor" target="_blank">
+          <div class="tooltip icon sync">
+            <i class="fa fa-github"></i>
+            <span class="tooltiptext">GitHub</span>
+          </div>
+        </a>
+      </span>
+    </div>
+  </div>
+  <div class="main-content">
+    <textarea id="editor" class="section content editor" placeholder="Code here..." onkeyup="refresh()"></textarea>
+    <iframe id="viewer" class="section content viewer" width="" height=""></iframe>
+  </div>
+  <div class="bar bottom-bar">
+    <div class="tags">
+      <span>HTML</span>
+      <span>&bull;</span>
+      <span>CSS</span>
+      <span>&bull;</span>
+      <span>JavaScript</span>
+      <!-- <div class="stats">Stats</div> -->
+    </div>
+    <div class="author">
+      <span>&copy; Pasan Godamune 2020</span>
+    </div>
+  </div>
+</body>
+
 </html>
