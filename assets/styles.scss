@@ -13,6 +13,30 @@ $default-gray: #999797;
 $default-light: #edf5fc;
 $white: #ffffff;
 
+$default-white-dark: #e0e0e0;
+$default-white: #eeeeee;
+$default-white-light: #f5f5f5;
+
+:root {
+  --color-top-bar-background: #202020;
+  --color-editor-background: #2e2e2e;
+  --color-icon-color: #999797;
+  --color-icon-hover: #ffffff;
+  --color-text: #ffffff;
+  --color-tooltip-text: #ffffff;
+  --color-tooltip-background: black;
+}
+
+.light {
+  --color-top-bar-background: #cccccc;
+  --color-editor-background: #eeeeee;
+  --color-icon-color: #2e2e2e;
+  --color-icon-hover: #686868;
+  --color-text: #202020;
+  --color-tooltip-text: black;
+  --color-tooltip-background: #cacaca;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -24,15 +48,15 @@ $white: #ffffff;
 }
 
 ::-webkit-scrollbar-track {
-  background: $default-black;
+  background: var(--color-editor-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $default-black-light;
+  background: var(--color-icon-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $default-gray;
+  background: var(--color-top-bar-background);
 }
 
 html,
@@ -46,12 +70,12 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--color-text);
 }
 
 .bar {
   font-family: "Lato";
-  color: white;
+  color: var(--color-text);
   display: flex;
   align-items: center;
   padding: 0 15px;
@@ -65,7 +89,7 @@ a {
   font-size: 16px;
   font-weight: bold;
   height: 35px;
-  background-color: $default-black-dark;
+  background-color: var(--color-top-bar-background);
 
   .left {
     display: flex;
@@ -79,12 +103,12 @@ a {
 
     .icon {
       margin-left: 20px;
-      color: $default-gray;
+      color: var(--color-icon-color);
       cursor: pointer;
       transition: all 0.2s;
 
       &:hover {
-        color: white;
+        color: var(--color-icon-hover);
       }
     }
 
@@ -99,23 +123,33 @@ a {
   .right {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     width: 50%;
+
+    .icon {
+      margin-left: 20px;
+      color: var(--color-icon-color);
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--color-icon-hover);
+      }
+    }
   }
 
   .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px dotted var(--color-editor-background);
     font-size: 15px !important;
 
     .tooltiptext {
       visibility: hidden;
       width: 50px;
-      background-color: black;
+      background-color: var(--color-tooltip-background);
       font-size: 12px;
       font-weight: normal;
-      color: #fff;
+      color: var(--color-tooltip-text);
       text-align: center;
       border-radius: 6px;
       padding: 5px 0;
@@ -139,6 +173,7 @@ a {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  color: $white;
   height: 20px;
   background-color: $default-blue;
 
@@ -176,9 +211,9 @@ a {
   .editor {
     padding: 10px;
     font-family: "Consolas";
-    color: white;
+    color: var(--color-text);
     resize: horizontal;
-    background-color: $default-black;
+    background-color: var(--color-editor-background);
   }
 
   .viewer {
