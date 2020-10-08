@@ -40,7 +40,10 @@
     </div>
   </div>
   <div class="main-content">
-    <textarea id="editor" class="section content editor" placeholder="Code here..." onkeyup="refresh()"></textarea>
+    <textarea class="lines" cols="4" value="1" readonly></textarea>
+    <textarea id="editor" class="section content editor" nowrap="nowrap" wrap="off" placeholder="Code here..."
+      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onclick="selectionChanged(this)"
+      onkeyup="refresh();keyUp(this,event)" oninput="inputChanged(this)" onscroll="scrollChanges(this)"></textarea>
     <iframe id="viewer" class="section content viewer" width="" height=""></iframe>
   </div>
   <div class="bar bottom-bar">
@@ -50,7 +53,9 @@
       <span>CSS</span>
       <span>&bull;</span>
       <span>JavaScript</span>
-      <!-- <div class="stats">Stats</div> -->
+      <div class="stats">
+        <span id="line"></span>
+      </div>
     </div>
     <div class="author">
       <span>&copy; Pasan Godamune 2020</span>

@@ -30,7 +30,7 @@ $default-white-light: #f5f5f5;
 .light {
   --color-top-bar-background: #cccccc;
   --color-editor-background: #eeeeee;
-  --color-icon-color: #2e2e2e;
+  --color-icon-color: #5e5e5e;
   --color-icon-hover: #686868;
   --color-text: #202020;
   --color-tooltip-text: black;
@@ -140,7 +140,6 @@ a {
   .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted var(--color-editor-background);
     font-size: 15px !important;
 
     .tooltiptext {
@@ -181,7 +180,7 @@ a {
     display: flex;
 
     .stats {
-      margin-left: 30px;
+      margin-left: 20px;
     }
   }
 }
@@ -189,6 +188,25 @@ a {
 .main-content {
   flex: 1;
   display: flex;
+
+  .lines {
+    min-width: 30px;
+    overflow-y: hidden;
+    background-color: var(--color-editor-background);
+    border: none;
+    border-right: 0.5px solid var(--color-top-bar-background);
+    border-radius: 0;
+    padding-top: 10px;
+    color: var(--color-icon-color);
+    text-align: right;
+    vertical-align: top;
+    z-index: 0;
+    resize: horizontal;
+
+    &:focus {
+      outline: none;
+    }
+  }
 
   .section {
     float: left;
@@ -209,7 +227,7 @@ a {
   }
 
   .editor {
-    padding: 10px;
+    padding: 10px 5px;
     font-family: "Consolas";
     color: var(--color-text);
     resize: horizontal;
