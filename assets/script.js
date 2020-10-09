@@ -29,7 +29,7 @@ var lineCount;
 
 function keyUp(obj, e) {
   // arrows ; home ; end ; page up/down
-  if (e.k = 33 && e.keyCode <= 40)
+  if (e.keyCode = 33 && e.keyCode <= 40)
     selectionChanged(obj, e.keyCode);
 }
 
@@ -88,4 +88,32 @@ function countLines(txt) {
     return 1;
   }
   return txt.split('\n').length + 1;
+}
+
+function htmlCode() {
+  var html =
+    `<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /** Add your CSS here **/
+  </style>
+  <script>
+    // Add your JS here
+  </script>
+</head>
+  
+<body>
+  <!-- Add your HTML here -->
+  <h1>HTML Editor</h1>
+</body>
+  
+</html>
+`
+  editorText = document.getElementById('editor').value = html;
+  refresh();
 }
